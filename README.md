@@ -15,7 +15,6 @@
 - has_many :items
 - has_many :comments
 - has_many :purchases
-- belongs_to :shipping
 
 # commentsテーブル
 
@@ -45,14 +44,19 @@
 ### Association
 - belongs_to :user
 - has_many :comments
-- belongs_to :purchase
-- belongs_to :shipping
+- belongs_to :purchases
 
 # purchasesテーブル
-| Column          | Type           | Options           |
-| --------------- | -------------- | ----------------- |
-| user            | references     | foreign_key: true |
-| item            | references     | foreign_key: true |
+| Column           | Type           | Options           |
+| ---------------- | -------------- | ----------------- |
+| card_number      | string         | null: false       |
+| expiration_month | string         | null: false       |
+| expiration_day   | string         | null: false       |
+| security_code    | string         | null: false       |
+| user             | references     | foreign_key: true |
+| item             | references     | foreign_key: true |
+| shippings        | references     | foreign_key: true |
+
 
 ### Association
 - belongs_to :user
@@ -61,13 +65,16 @@
 
 # shippingsテーブル
 | Column          | Type           | Options           |
+| --------------- | -------------- | ----------------- |
+| postal_code     | string         | null: false       |
+| prefectures     | string         | null: false       |
+| municipality    | string         | null: false       |
 | address         | string         | null: false       |
-| date            | datetime       | null: false       |
-| user            | string         | foreign_key: true |
-| item            | string         | foreign_key: true |
+| building_name   | string         | ----------------- |
+| phone_number    | string         | null: false       |
+| purchases       | references     | foreign_key: true |
+
 
 ### Association
-- belongs_to :user
-- belongs_to :item
 - belongs_to :purchase
 
