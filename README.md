@@ -58,15 +58,15 @@
 - has_one :shipping
 
 # shippingsテーブル
-| Column          | Type           | Options           |
-| --------------- | -------------- | ----------------- |
-| postal_code     | string         | null: false       |
-| prefectures     | integer        | null: false       |
-| municipality    | string         | null: false       |
-| address         | string         | null: false       |
-| building_name   | string         | ----------------- |
-| phone_number    | string         | null: false       |
-| purchase        | references     | foreign_key: true |
+| Column           | Type           | Options           |
+| ---------------- | -------------- | ----------------- |
+| postal_code      | string         | null: false       |
+| delivery_area_id | integer        | null: false       |
+| municipality     | string         | null: false       |
+| address          | string         | null: false       |
+| building_name    | string         | ----------------- |
+| phone_number     | string         | null: false       |
+| purchase         | references     | foreign_key: true |
 
 
 ### Association
