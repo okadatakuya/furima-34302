@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  validates :password, format: { with: /\A[a-z0-9]+\z/i }
+  validates :password, format: { with: /^(?=.*?[a-z])(?=.*?\d)[a-z\d]$/i }
   validates :first_name_hurigana, format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :last_name_hurigana, format: { with: /\A[ァ-ヶー－]+\z/ }
 
@@ -16,5 +16,5 @@ class User < ApplicationRecord
     validates :last_name_hurigana
     validates :birthday
   end
-  
+
 end
