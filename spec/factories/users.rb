@@ -5,8 +5,8 @@ FactoryBot.define do
     email {Faker::Internet.free_email}
     password {'aaaa1111'}
     password_confirmation {password}
-    first_name {Faker::Name.first_name}
-    last_name {Faker::Name.last_name}
+    first_name {'菅田'}
+    last_name {'将暉'}
     first_name_hurigana { Gimei.first.katakana }
     last_name_hurigana { Gimei.last.katakana }
     birthday {Faker::Date.birthday}
