@@ -14,7 +14,7 @@
 ### Association
 - has_many :items
 - has_many :comments
-- has_many :purchases
+- has_many :orders
 
 # commentsテーブル
 
@@ -44,9 +44,9 @@
 ### Association
 - belongs_to :user
 - has_many :comments
-- has_one :purchases
+- has_one :orders
 
-# purchasesテーブル
+# ordersテーブル
 | Column           | Type           | Options           |
 | ---------------- | -------------- | ----------------- |
 | user             | references     | foreign_key: true |
@@ -66,9 +66,10 @@
 | address          | string         | null: false       |
 | building_name    | string         | ----------------- |
 | phone_number     | string         | null: false       |
-| purchase         | references     | foreign_key: true |
+| order            | references     | foreign_key: true |
 
 
 ### Association
-- belongs_to :purchase
+- belongs_to :order
+
 
