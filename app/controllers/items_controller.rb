@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :item_find, only: [:show, :edit, :update, :destroy]
   before_action :move_to_root_path, only: [:edit, :update, :destroy]
-  before_action :item_nil, only: [:edit]
   def index
     @items = Item.order(id: "DESC")
   end
@@ -52,13 +51,7 @@ class ItemsController < ApplicationController
   end
 
   def move_to_root_path
-    unless current_user == @item.user
-      redirect_to root_path
-    end
-  end
-
-  def item_nil
-    if @item.order.present?
+    unless current_user == @item.user || @item.order.present?
       redirect_to root_path
     end
   end
