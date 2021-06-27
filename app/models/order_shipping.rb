@@ -13,7 +13,7 @@ class OrderShipping
   validates :delivery_area_id, numericality: {other_than: 0, message: "can't be blank"}
 
   def save
-    order = Order.create(token: token, user_id: user_id, item_id: item_id)
+    order = Order.create(user_id: user_id, item_id: item_id)
     Shipping.create(postal_code: postal_code, delivery_area_id: delivery_area_id, municipality: municipality, address: address, building_name: building_name, phone_number: phone_number, order_id: order.id)
   end
   
