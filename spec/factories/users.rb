@@ -9,5 +9,6 @@ FactoryBot.define do
     first_name_hurigana { Gimei.first.katakana }
     last_name_hurigana { Gimei.last.katakana }
     birthday {Faker::Date.birthday}
+
   end
 end
