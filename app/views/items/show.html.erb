@@ -16,7 +16,7 @@
     </div>
     <div class="item-price-box">
       <span class="item-price">
-        <% @item.price %>
+        ¥<%= @item.price %>
       </span>
       <span class="item-postage">
         <%= @item.delivery_charge_burden.name %>
@@ -34,7 +34,7 @@
   <% end %>
 
     <div class="item-explain-box">
-      <span><%= @item.name %></span>
+      <span><%= @item.content %></span>
     </div>
     <table class="detail-table">
       <tbody>
